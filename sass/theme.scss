@@ -1,0 +1,32 @@
+@import '../variables/colors.scss';
+@import '../variables/components.scss';
+.row-full{
+    display: block ;
+    float: left ;
+    width: 100%;
+}
+h1.strong{
+    font-weight: bolder ;
+    font-size: 40px;
+}
+.btn-def-appcost{
+   background-color: $yellow ;
+    line-height: 40px;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    color: #fff;
+    display: inline-block;
+    padding:4px 36px ;
+    border-radius: 3px;
+    font-weight: bold;
+    text-decoration: none;
+    transition:  all ease .3s ;
+    -webkit-transition:  all ease .3s ;
+    -moz-transition:  all ease .3s ;
+    &:hover,&:active,&:focus{
+        background-color: darken($yellow , 10 );
+        color: #fff;
+        text-decoration: none ;
+    }
+}

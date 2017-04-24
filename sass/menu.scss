@@ -1,0 +1,260 @@
+@import "../variables/colors.scss";
+@import "../variables/components.scss";
+.header{
+    ul.header-nav{
+        display: block ;
+        width: 100%;
+        list-style: none ;
+        list-style-type: none ;
+        list-style-image: none ;
+        padding: 0 ;
+        margin: 0 ;
+        li.header-nav-item{
+            width: auto ;
+            float: left ;
+            list-style: none ;
+            list-style-type: none ;
+            list-style-image: none ;
+            line-height: 50px;
+        }
+        li.mobile-contact{
+            float: right ;
+            line-height: 68px;
+
+        }
+    }
+}
+.menu-full{
+input {
+  display: none;
+}
+
+.open {
+  background-color: #3c3c3c;
+  width: 37px;
+  height: 4px;
+  display: block;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  top: 8px;
+}
+
+.open:before {
+  content: "";
+  background-color: #3c3c3c;
+  width: 37px;
+  height: 4px;
+  display: block;
+  border-radius: 2px;
+  position: relative;
+  top: -8px;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.open:after {
+  content: "";
+  background-color: #3c3c3c;
+  width: 37px;
+  height: 4px;
+  display: block;
+  border-radius: 2px;
+  position: relative;
+  top: 4px;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.menuOpen {
+  width: 24px;
+  height: 20px;
+  display: block;
+  padding: 15px;
+  padding-left: 0 ;
+  cursor: pointer;
+}
+
+.menuOpen:hover .open:before {
+  top: -9px;
+}
+
+.menuOpen:hover .open:after {
+  top: 5px;
+}
+
+.menu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: $yellow ;
+}
+
+.menu label {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.menu .menuContent {
+  position: relative;
+  top: 50%;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-top: -170px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+.menu ul li{
+    text-align: center ;
+    margin-bottom: 8px;
+    opacity: 0 ;
+    transition: all ease .3s;
+    -webkit-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    transform: translateX(-90px);
+    -webkit-transform: translateX(-90px);
+    -moz-transform: translateX(-90px);
+}
+.menu ul li a {
+    .link-label{
+font-weight: bolder;
+text-transform: uppercase;
+font-size: 38px;
+    }
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ;
+    width: auto;
+    padding: 0 19px;
+    line-height: normal ;
+    
+}
+
+.menu ul li a:hover {
+  color: #503c25;
+}
+
+.menu ul li:hover {
+  
+}
+
+.menuEffects {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.menuEffects ul {
+  transform: translateY(0%);
+  transition: all 0.5s;
+}
+
+#menuToggle:checked ~ .menuEffects {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s;
+}
+
+#menuToggle:checked ~ .menuEffects ul {
+  opacity: 1;
+
+ li{
+          opacity: 1;
+          transform: translateX(0);
+          -webkit-transform: translateX(0);
+          -moz-transform: translateX(0);
+
+      &:nth-child(1){
+          transition-delay: .1s;
+      }
+       &:nth-child(2){
+          transition-delay: .3s;
+      }
+       &:nth-child(3){
+          transition-delay: .5s;
+      }
+
+       &:nth-child(4){
+          transition-delay: .7s;
+      }
+  }
+  
+}
+
+#menuToggle:checked ~ .menuOpen .open {
+  background-color: transparent;
+}
+
+#menuToggle:checked ~ .menuOpen .open:before {
+  content: "";
+  background-color: white;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#menuToggle:checked ~ .menuOpen .open:after {
+  content: "";
+  background-color: white;
+  transform: rotate(-45deg);
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#menuToggle:not(:checked) ~ .menuEffects ul {
+  transform: translateY(-30%);
+  
+}
+
+.label-small{
+    position: absolute ;
+    font-size: 12px;
+}
+
+
+
+}
+
+
+
+@include till_Ipad{
+    .link-label{
+        font-size: 24px !important;
+    }
+}
+
+
+
+.backbutton{
+    a{
+        color: #3c3c3c;
+        line-height: 73px;
+        font-size: 12px;
+        text-decoration: none !important ;
+    }
+}
+
+
+.link-l{
+        font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    top: -3px;
+    margin-left: 8px;
+}
